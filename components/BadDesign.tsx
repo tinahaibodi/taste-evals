@@ -71,7 +71,7 @@ function CardBad() {
 
 export default function BadDesign() {
   return (
-    <section>
+    <section id="part-2">
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Part 2</p>

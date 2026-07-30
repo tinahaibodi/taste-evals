@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function Brief() {
   return (
-    <section>
+    <section id="brief">
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Project Brief</p>

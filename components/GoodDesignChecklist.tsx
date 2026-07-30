@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function GoodDesignChecklist() {
   return (
-    <section>
+    <section id="part-1-2">
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Part 1.2</p>

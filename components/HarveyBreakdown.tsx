@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function HarveyBreakdown() {
   return (
-    <section>
+    <section id="part-1-1">
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Part 1.1</p>
