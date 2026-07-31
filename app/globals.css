@@ -117,11 +117,16 @@ section { padding: 72px 0; }
   .deck-card { margin: 0 -18px; }
 }
 
-/* article view: single docs column beside the fixed sidebar */
-.article { padding-top: 56px; }
+/* article view: single docs column beside a sticky sidebar.
+   main stretches to the viewport so the footer stays pinned to the bottom
+   even when a section is short; the sidebar lives inside .shell so it can
+   never overlap the footer. */
+main { display: flex; flex-direction: column; min-height: 100svh; }
+.shell { flex: 1; display: flex; align-items: flex-start; }
+.article { padding-top: 56px; flex: 1; min-width: 0; }
 @media (min-width: 960px) {
-  .article .col, .article .wide, .site-footer .wide {
-    margin-left: 300px; margin-right: auto;
+  .article .col, .article .wide {
+    margin-left: 60px; margin-right: auto;
   }
 }
 
@@ -309,8 +314,9 @@ li.done .qa-box { border-color: var(--ink); background: var(--ink); }
 
 /* docs sidebar */
 .toc {
-  position: fixed; left: 40px; top: 88px; width: 200px;
-  display: flex; flex-direction: column; gap: 32px; z-index: 10;
+  position: sticky; top: 0; flex: none;
+  width: 200px; margin-left: 40px; padding-top: 88px;
+  display: flex; flex-direction: column; gap: 32px;
 }
 @media (max-width: 959px) { .toc { display: none; } }
 .toc-home {
@@ -332,10 +338,17 @@ li.done .qa-box { border-color: var(--ink); background: var(--ink); }
 .toc-items a.active { color: var(--text); }
 
 /* footer */
-.site-footer { border-top: 1px solid var(--panel-border); margin-top: 72px; padding: 64px 0 72px; }
-.footer-grid { display: flex; justify-content: flex-start; align-items: flex-start; gap: 120px; flex-wrap: wrap; }
-.footer-logo { width: 96px; height: auto; display: block; }
-.footer-cols { display: flex; gap: 96px; flex-wrap: wrap; }
+.site-footer {
+  border-top: 1px solid var(--panel-border);
+  margin-top: 96px; padding: 48px 0 80px;
+}
+.site-footer .wide { max-width: none; margin: 0; padding: 0 40px; }
+.footer-grid {
+  display: flex; justify-content: flex-start; align-items: flex-start; gap: 96px; flex-wrap: wrap;
+}
+.footer-logo { width: 68px; height: auto; display: block; margin-top: 2px; }
+.footer-cols { display: flex; gap: 72px; flex-wrap: wrap; }
+@media (max-width: 720px) { .footer-grid { flex-direction: column; gap: 40px; } }
 .footer-cols .f-head {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
   text-transform: uppercase; color: var(--muted); margin-bottom: 14px;

@@ -34,8 +34,10 @@ export default function Site() {
 
   return (
     <>
-      <Toc active={view} />
-      <div className="article">{section.element}</div>
+      <div className="shell">
+        <Toc active={view} />
+        <div className="article">{section.element}</div>
+      </div>
       <SiteFooter />
     </>
   );
