@@ -12,7 +12,7 @@ export default function SiteFooter() {
             <a href="#tool">Handoff</a>
           </div>
           <div>
-            <p className="f-head">Elsewhere</p>
+            <p className="f-head">Tools</p>
             <a href="https://github.com/tinahaibodi/taste-evals">GitHub</a>
             <a href="https://github.com/tinahaibodi/taste-evals/tree/main/taste-check">
               Taste CLI

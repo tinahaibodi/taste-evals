@@ -6,7 +6,7 @@ export default function HarveyBreakdown() {
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Rubric · Case study</p>
-          <h2 className="section-title">What makes good design? — Harvey</h2>
+          <h2 className="section-title">What Makes Great Design? Lessons from Harvey</h2>
           <ul className="checklist">
             <li>
               <b>Good art direction and imagery</b>

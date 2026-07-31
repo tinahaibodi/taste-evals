@@ -14,15 +14,11 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
       </button>
 
       <div className="hero-center">
-        <span className="hero-rule" />
         <h1 className="hero-title">
           <img src="/taste.svg" alt="Taste" className="hero-logo" />
           <span className="hero-labs">Labs</span>
         </h1>
-        <p className="hero-sub">
-          The design QA kit for Meridian —<br />
-          a taste check your team can actually run.
-        </p>
+        <p className="hero-sub">A taste audit your team can actually run.</p>
       </div>
 
       <div className="hero-deck">
