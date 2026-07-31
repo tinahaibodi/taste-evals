@@ -12,10 +12,8 @@ export default function Site() {
   useEffect(() => {
     const apply = () => {
       const hash = window.location.hash.slice(1);
-      if (SECTIONS.some((s) => s.id === hash)) {
-        setView(hash);
-        window.scrollTo(0, 0);
-      }
+      setView(SECTIONS.some((s) => s.id === hash) ? hash : "hero");
+      window.scrollTo(0, 0);
     };
     apply();
     window.addEventListener("hashchange", apply);

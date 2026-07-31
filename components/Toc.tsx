@@ -3,6 +3,9 @@ import { GROUPS } from "./sections";
 export default function Toc({ active }: { active: string }) {
   return (
     <nav className="toc" aria-label="Contents">
+      <a className="toc-home" href="#">
+        ← Home
+      </a>
       {GROUPS.map((group) => (
         <div className="toc-group" key={group.title}>
           <p className="toc-label">{group.title}</p>
