@@ -16,21 +16,28 @@ const gradeSchema = z.object({
   ),
 });
 
-const VISION_RUBRIC = RUBRIC.filter((r) => r.tier !== "static");
+/** Vision grades heuristic criteria; human-only items stay on the checklist. */
+const VISION_RUBRIC = RUBRIC.filter((r) => r.method === "vision" || r.method === "both");
 
 function buildPrompt(): string {
   const items = VISION_RUBRIC.map(
-    (r) => `- id: ${r.id} · default severity: ${r.defaultSeverity}\n  ${r.label}`,
+    (r) =>
+      `- id: ${r.id} · weight: ${r.weight}% · default severity: ${r.defaultSeverity}\n  ${r.label}`,
   ).join("\n");
 
   return `You are a design QA reviewer for a product team with no designer on staff.
-Grade the attached UI screenshot against each rubric item below. Be strict but
-concrete: only fail an item if you can point at specific evidence in the
-screenshot, and describe that evidence in the note (element + location).
+Grade the attached UI screenshot against each Taste Check rubric item below.
+Be strict but concrete: only fail an item if you can point at specific evidence
+in the screenshot, and describe that evidence in the note (element + location).
+
+These criteria come from the Design Evals Good Design Benchmarks. A screen
+passes when it clears every blocker; its score is the weighted aggregate of
+the twelve criteria. A screen that fails a blocker scores zero.
 
 Severity rules:
-- "blocker" only for readability/contrast failures, broken hierarchy, or
-  anything that makes critical information ambiguous.
+- "blocker" only for readability/contrast failures, broken hierarchy, missing
+  empty/loading/error states, or anything that makes critical information
+  ambiguous (especially money amounts).
 - Use the item's default severity otherwise, downgrading to "polish" for
   purely cosmetic issues.
 

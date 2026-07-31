@@ -22,7 +22,7 @@ export function printReport(title: string, findings: Finding[]): void {
   console.log(`\n${COLORS.bold}taste-check · ${title}${COLORS.reset}\n`);
 
   if (findings.length === 0) {
-    console.log(`${COLORS.green}all checks pass — ship it ✓${COLORS.reset}\n`);
+    console.log(`${COLORS.green}all checks pass, ship it ✓${COLORS.reset}\n`);
     return;
   }
 

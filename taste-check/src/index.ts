@@ -4,15 +4,22 @@ import { existsSync } from "node:fs";
 import { printReport, exitCode } from "./report.js";
 import { runStaticCheck } from "./static-check.js";
 
-const USAGE = `taste-check — run the design rubric against your code
+const USAGE = `taste-check: run the Taste Check design rubric against your code
+
+The twelve Design Evals criteria, grouped by how they are graded:
+  static + vision  Typography, Spacing and layout, Colour, Copy, Icons and detail
+  vision           Hierarchy, Motion and effects, States and feedback,
+                   Marketing to product consistency
+  human            Art direction, Interaction states, Responsive behavior
+                   (use the Taste Check checklist; not graded by the CLI)
 
 Usage:
   taste-check static [dir]              Deterministic lint of CSS/JSX
                                         (spacing tokens, type scale, font count,
-                                        emoji-as-icon, copy length, color roles)
+                                        emoji as icons, copy length, colour roles)
   taste-check vision <url|image> [opts] LLM grading of a rendered screen
-                                        (hierarchy, contrast, nesting, alignment,
-                                        states, consistency, motion)
+                                        (hierarchy, motion, states, consistency,
+                                        and the static+vision criteria above)
 
 Options:
   --strict          Exit non-zero on any finding (default: blockers only)

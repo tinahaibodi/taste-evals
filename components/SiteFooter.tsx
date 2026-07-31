@@ -8,6 +8,7 @@ export default function SiteFooter() {
             <p className="f-head">Contents</p>
             <a href="#brief">Brief</a>
             <a href="#part-1-1">Rubric</a>
+            <a href="#part-2">Design Evals</a>
             <a href="#qa">QA</a>
             <a href="#tool">Handoff</a>
           </div>

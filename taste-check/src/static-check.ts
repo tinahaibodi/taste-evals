@@ -49,7 +49,7 @@ function checkSpacing(line: Line, isCss: boolean, findings: Finding[]): void {
         const value = Math.abs(parseFloat(px[1]));
         if (!SPACING_SCALE.includes(value)) {
           findings.push({
-            rubricId: "spacing-tokens",
+            rubricId: "spacing-layout",
             severity: "fix-this-week",
             where: `${line.file}:${line.lineNo}`,
             message: `${m[1]}: ${px[0]} is not on the spacing scale`,
@@ -62,7 +62,7 @@ function checkSpacing(line: Line, isCss: boolean, findings: Finding[]): void {
       const value = Math.abs(parseFloat(m[3]));
       if (!SPACING_SCALE.includes(value)) {
         findings.push({
-          rubricId: "spacing-tokens",
+          rubricId: "spacing-layout",
           severity: "fix-this-week",
           where: `${line.file}:${line.lineNo}`,
           message: `${m[1]}${m[2] ?? ""}: ${m[3]} is not on the spacing scale`,
@@ -82,7 +82,7 @@ function checkTypeScale(line: Line, isCss: boolean, findings: Finding[]): void {
     const px = m[2] === "rem" ? raw * 16 : raw;
     if (!TYPE_SCALE.includes(px)) {
       findings.push({
-        rubricId: "type-scale",
+        rubricId: "typography",
         severity: "fix-this-week",
         where: `${line.file}:${line.lineNo}`,
         message: `font size ${m[1]}${m[2] ?? ""} is not on the type scale`,
@@ -105,7 +105,7 @@ function checkFontFamilies(allLines: Line[], findings: Finding[]): void {
   }
   if (families.size > MAX_FONT_FAMILIES) {
     findings.push({
-      rubricId: "type-scale",
+      rubricId: "typography",
       severity: "blocker",
       message: `${families.size} font families in use (max ${MAX_FONT_FAMILIES}): ${[...families.keys()].join(", ")}`,
     });
@@ -120,10 +120,10 @@ function checkEmoji(line: Line, findings: Finding[]): void {
   const m = line.text.match(EMOJI);
   if (m) {
     findings.push({
-      rubricId: "icons",
+      rubricId: "icons-detail",
       severity: "fix-this-week",
       where: `${line.file}:${line.lineNo}`,
-      message: `emoji "${m[0]}" used in the interface — use a functional icon instead`,
+      message: `emoji "${m[0]}" used in the interface; use a functional icon instead`,
     });
   }
 }
@@ -152,10 +152,10 @@ function checkColorRoles(allLines: Line[], findings: Finding[]): void {
     if (/--[\w-]+\s*:/.test(line.text)) continue;
     for (const m of line.text.matchAll(HEX_COLOR)) {
       findings.push({
-        rubricId: "color-roles",
+        rubricId: "colour",
         severity: "fix-this-week",
         where: `${line.file}:${line.lineNo}`,
-        message: `raw color ${m[0]} — give it a named role (a CSS variable) instead`,
+        message: `raw color ${m[0]}; give it a named role (a CSS variable) instead`,
       });
     }
   }

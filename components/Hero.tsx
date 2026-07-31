@@ -1,8 +1,8 @@
 const CARDS = [
-  { id: "brief", label: "Brief" },
-  { id: "part-1-1", label: "Rubric" },
-  { id: "qa", label: "QA" },
-  { id: "tool", label: "Handoff" },
+  { id: "part-1-1", label: "Rubric", art: "/cards/Group.svg" },
+  { id: "part-2", label: "Design Evals", art: "/cards/Group-3.svg" },
+  { id: "qa", label: "QA", art: "/cards/Group-1.svg" },
+  { id: "tool", label: "Handoff", art: "/cards/Group-2.svg" },
 ];
 
 export default function Hero({ onEnter }: { onEnter: () => void }) {
@@ -30,10 +30,13 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
       </div>
 
       <div className="hero-deck">
-        {CARDS.map(({ id, label }, i) => (
+        {CARDS.map(({ id, label, art }, i) => (
           <a key={id} href={`#${id}`} className={`deck-card deck-${i + 1}`}>
-            <span className="deck-pattern" />
-            <span className="deck-label">{label}</span>
+            <img className="deck-frame" src="/cards/card-frame.svg" alt="" />
+            <span className="deck-face">
+              <span className="deck-label">{label}</span>
+              <img className="deck-art" src={art} alt="" />
+            </span>
           </a>
         ))}
       </div>

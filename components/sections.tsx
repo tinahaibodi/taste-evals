@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Brief from "./Brief";
+import MeridianBrief from "./MeridianBrief";
 import HarveyBreakdown from "./HarveyBreakdown";
 import BadDesign from "./BadDesign";
 import QaProcess from "./QaProcess";
@@ -14,18 +14,18 @@ export interface SectionDef {
 export const GROUPS: { title: string; items: SectionDef[] }[] = [
   {
     title: "Brief",
-    items: [{ id: "brief", title: "The brief", element: <Brief /> }],
+    items: [{ id: "brief", title: "Meridian Brief", element: <MeridianBrief /> }],
   },
   {
     title: "Rubric",
     items: [
       { id: "part-1-1", title: "Harvey breakdown", element: <HarveyBreakdown /> },
-      { id: "part-2", title: "Good vs. bad", element: <BadDesign /> },
+      { id: "part-2", title: "Design Evals", element: <BadDesign /> },
     ],
   },
   {
     title: "QA",
-    items: [{ id: "qa", title: "Gates & checklist", element: <QaProcess /> }],
+    items: [{ id: "qa", title: "Taste Check", element: <QaProcess /> }],
   },
   {
     title: "Handoff",

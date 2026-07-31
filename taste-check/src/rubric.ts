@@ -1,16 +1,21 @@
 /**
- * The taste-evals rubric, expressed as data so both the static and vision
- * checks grade against the exact same criteria.
+ * The Taste Check design rubric, matching the twelve Design Evals criteria
+ * on the site. Static and vision checks grade against the same ids; human
+ * criteria are listed for documentation and the checklist, not automated.
  */
 
 export type Severity = "blocker" | "fix-this-week" | "polish";
 
+export type Method = "static" | "vision" | "both" | "human";
+
 export interface RubricItem {
   id: string;
   label: string;
-  /** Which check can evaluate this item. */
-  tier: "static" | "vision" | "both";
+  /** How the Taste CLI harness measures this item. */
+  method: Method;
   defaultSeverity: Severity;
+  /** Weight toward the final grade, in percent. Sums to 100. */
+  weight: number;
 }
 
 export const SPACING_SCALE = [0, 4, 8, 12, 16, 24, 32];
@@ -20,76 +25,97 @@ export const MAX_LINE_LENGTH = 75;
 
 export const RUBRIC: RubricItem[] = [
   {
-    id: "type-scale",
-    label: `Type: no more than ${MAX_FONT_FAMILIES} font families; sizes only from the scale (${TYPE_SCALE.join(" / ")})`,
-    tier: "both",
+    id: "art-direction",
+    label:
+      "Art direction and imagery: commissioned or curated imagery; photos and illustrations share one cohesive style and color grading",
+    method: "human",
     defaultSeverity: "fix-this-week",
+    weight: 10,
+  },
+  {
+    id: "typography",
+    label: `Typography: clear type scale (display, heading, body, caption); at most ${MAX_FONT_FAMILIES} font families; sizes only from (${TYPE_SCALE.join(" / ")})`,
+    method: "both",
+    defaultSeverity: "fix-this-week",
+    weight: 12,
   },
   {
     id: "hierarchy",
-    label: "Hierarchy: semibold = heading, medium = label, regular = body — no arbitrary bolding",
-    tier: "vision",
+    label:
+      "Hierarchy: weight, styling and variation match their role; semibold = heading, medium = label, regular = body",
+    method: "vision",
     defaultSeverity: "blocker",
+    weight: 12,
   },
   {
-    id: "spacing-tokens",
-    label: `Spacing: every padding/margin is a token value (${SPACING_SCALE.filter(Boolean).join(" / ")}) — nothing eyeballed`,
-    tier: "static",
+    id: "spacing-layout",
+    label: `Spacing and layout: every padding/margin/gap is a token value (${SPACING_SCALE.filter(Boolean).join(" / ")}); a grid governs text, images and sections`,
+    method: "both",
     defaultSeverity: "fix-this-week",
+    weight: 12,
   },
   {
-    id: "color-roles",
-    label: "Color: every color has a named role (primary, neutral, success, danger) — none decorative",
-    tier: "both",
+    id: "colour",
+    label:
+      "Colour: clear palette with clear roles (primary, neutrals, semantic); no decorative raw hex",
+    method: "both",
     defaultSeverity: "fix-this-week",
+    weight: 8,
   },
   {
-    id: "nested-cards",
-    label: "Containers: no card nested inside another card without a stated reason",
-    tier: "vision",
-    defaultSeverity: "fix-this-week",
-  },
-  {
-    id: "icons",
-    label: "Icons: functional only — same set, same stroke weight, no emoji-as-icon",
-    tier: "both",
-    defaultSeverity: "fix-this-week",
-  },
-  {
-    id: "contrast",
-    label: "Contrast: body text passes 4.5:1 against its background",
-    tier: "vision",
-    defaultSeverity: "blocker",
+    id: "motion-effects",
+    label:
+      "Motion and effects: noise and blur accentuate; animation is reserved for select intentional moments that improve usability",
+    method: "vision",
+    defaultSeverity: "polish",
+    weight: 6,
   },
   {
     id: "copy",
-    label: `Copy: line length ≤ ${MAX_LINE_LENGTH} characters; labels say what the control does`,
-    tier: "both",
+    label: `Copy: good line length (≤ ${MAX_LINE_LENGTH} chars) and letter spacing; text properly aligned and centered`,
+    method: "both",
     defaultSeverity: "polish",
+    weight: 8,
   },
   {
-    id: "alignment",
-    label: "Alignment: everything sits on the grid — nothing floats",
-    tier: "vision",
+    id: "icons-detail",
+    label:
+      "Icons and detail: one icon style with deliberate borders, dividers and strokes; no emoji as icons",
+    method: "both",
     defaultSeverity: "fix-this-week",
+    weight: 4,
   },
   {
-    id: "states",
-    label: "States: loading, empty, and error states exist and use the interface's voice",
-    tier: "vision",
+    id: "interaction-states",
+    label:
+      "Interaction states: hover, focus, active and disabled treatments exist and stay consistent",
+    method: "human",
+    defaultSeverity: "fix-this-week",
+    weight: 8,
+  },
+  {
+    id: "responsive",
+    label:
+      "Responsive behavior: grid, type scale and containers hold at tablet and mobile breakpoints",
+    method: "human",
     defaultSeverity: "blocker",
+    weight: 8,
+  },
+  {
+    id: "states-feedback",
+    label:
+      "States and feedback: empty, loading and error states designed for every required form and flow",
+    method: "vision",
+    defaultSeverity: "blocker",
+    weight: 8,
   },
   {
     id: "consistency",
-    label: "Consistency: the screen uses the same type, spacing and color logic as the rest of the app",
-    tier: "vision",
+    label:
+      "Marketing to product consistency: type, spacing and colour logic carry from the site into the product design",
+    method: "vision",
     defaultSeverity: "fix-this-week",
-  },
-  {
-    id: "motion",
-    label: "Motion: any animation improves usability (orientation, feedback) — otherwise cut it",
-    tier: "vision",
-    defaultSeverity: "polish",
+    weight: 4,
   },
 ];
 

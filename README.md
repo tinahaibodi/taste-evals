@@ -1,39 +1,52 @@
-# Taste Labs — Field Notes
+# Taste Check
 
-A Rauno-style field-notes web app for the Taste Labs planning doc: what LLMs think good
-design is, the good-design checklists, the bad-design critique (with annotated card
-examples), and a QA process designed to be realistic for Meridian's two-developer team.
+A design audit kit your team can actually run. The site walks through a Meridian
+brief, a Harvey case study, Design Evals benchmarks, a Taste Check checklist,
+and the Taste CLI that keeps the rubric running after the audit.
+
+Live site: [tastecheck.vercel.app](https://tastecheck.vercel.app)
 
 ## Stack
-- Next.js 14 (App Router) + TypeScript
-- Framer Motion for scroll reveals, the hero entrance, and self-drawing annotation arrows
 
-## Run it
+- Next.js (App Router) + TypeScript
+- DM Sans + JetBrains Mono
+- `taste-check/` — the CLI that grades CSS/JSX (static) and screenshots (vision)
+
+## Run the site
+
 ```bash
 npm install
 npm run dev
 ```
+
 Open http://localhost:3000
 
-## Where to add animations
-- `components/Reveal.tsx` — the shared scroll-reveal wrapper (tweak duration/easing once, applies everywhere)
-- `components/Annot.tsx` — handwritten annotations + SVG arrows that draw themselves on scroll (`pathLength`)
-- `components/Hero.tsx` — hero entrance sequence
-- `components/QaProcess.tsx` — interactive 12-point checklist (client component with state)
+## Run the CLI
 
-All motion respects `prefers-reduced-motion`.
+```bash
+cd taste-check
+npm install
+npm run build && npm link
+
+taste-check static ../src
+taste-check vision http://localhost:3000
+```
+
+See [`taste-check/README.md`](./taste-check/README.md) for the twelve criterion
+rubric, weights, CI wiring, and severity rules.
 
 ## Structure
+
 ```
-app/layout.tsx          fonts + metadata
-app/globals.css         design tokens (colors, hand/mono/sans fonts, panels, cards)
-app/page.tsx            assembles the sections
+app/                    Next.js app (layout, page, globals)
 components/
-  Hero.tsx              handwritten red title
-  Brief.tsx             deliverables + nice-to-haves from the doc
-  LlmGoodDesign.tsx     Harvey / Sierra / Cognition
-  HarveyBreakdown.tsx   full Harvey good-design breakdown
-  GoodDesignChecklist.tsx  the general checklist
-  BadDesign.tsx         annotated card examples + all 14 bad-design bullets
-  QaProcess.tsx         3 gates, 12-point rubric, severity levels, issue template
+  Hero.tsx              Landing gateway
+  MeridianBrief.tsx     Client brief
+  HarveyBreakdown.tsx   Case study + Taste Benchmarks
+  BadDesign.tsx         Design Evals (Good / Bad weights)
+  QaProcess.tsx         Taste Check checklist + severities
+  ToolWalkthrough.tsx   Taste CLI install and usage
+  EvalRunner.tsx        Example Results panel
+  benchmarks.ts         Shared twelve criterion scores and weights
+taste-check/            CLI source (static + vision)
 ```

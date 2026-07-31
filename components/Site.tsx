@@ -24,7 +24,7 @@ export default function Site() {
     return (
       <Hero
         onEnter={() => {
-          window.location.hash = "brief";
+          window.location.hash = "part-1-1";
         }}
       />
     );
