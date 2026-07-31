@@ -5,17 +5,17 @@ import Reveal from "./Reveal";
 
 const CHECK_ITEMS = [
   "Type: no more than 2 font families on screen; sizes only from the scale (12 / 14 / 17 / 24 / 32)",
-  "Hierarchy: semibold = heading, medium = label, regular = body — no arbitrary bolding",
-  "Spacing: every padding/margin is a token value (4 / 8 / 12 / 16 / 24 / 32) — nothing eyeballed",
-  "Color: every color has a named role (primary, neutral, success, danger) — none decorative",
+  "Hierarchy: semibold = heading, medium = label, regular = body; no arbitrary bolding",
+  "Spacing: every padding/margin is a token value (4 / 8 / 12 / 16 / 24 / 32); nothing eyeballed",
+  "Color: every color has a named role (primary, neutral, success, danger); none decorative",
   "Containers: no card nested inside another card without a stated reason",
-  "Icons: functional only — same set, same stroke weight, no emoji-as-icon",
+  "Icons: functional only, same set, same stroke weight, no emoji-as-icon",
   "Contrast: body text passes 4.5:1 against its background (spot-check with a picker)",
   "Copy: line length ≤ 75 characters; labels say what the control does (\u201CApprove expense\u201D, not \u201CSubmit\u201D)",
-  "Alignment: everything sits on the grid — zoom to 50% and squint; nothing floats",
+  "Alignment: everything sits on the grid; zoom to 50% and squint, nothing floats",
   "States: loading, empty, and error states exist and use the interface\u2019s voice",
   "Consistency: the screen uses the same type, spacing and color logic as the rest of Meridian",
-  "Motion: any animation improves usability (orientation, feedback) — otherwise cut it",
+  "Motion: any animation improves usability (orientation, feedback); otherwise cut it",
 ];
 
 function GateChecklist() {
@@ -55,8 +55,8 @@ function GateChecklist() {
       </ul>
       <p className="qa-progress" aria-live="polite">
         {count === CHECK_ITEMS.length
-          ? "all 12 pass — ship it \u2713"
-          : `${count} / ${CHECK_ITEMS.length} checks pass${count > 0 ? " — keep going" : ""}`}
+          ? "all 12 pass, ship it \u2713"
+          : `${count} / ${CHECK_ITEMS.length} checks pass${count > 0 ? ", keep going" : ""}`}
       </p>
     </div>
   );
@@ -71,7 +71,7 @@ export default function QaProcess() {
           <h2 className="section-title">Three gates, under an hour a week</h2>
           <p>
             The constraint that matters: <b>two developers, no designer on staff.</b> So the
-            process can&apos;t depend on taste — it has to turn &quot;good&quot; into checks
+            process can&apos;t depend on taste; it has to turn &quot;good&quot; into checks
             a non-designer can apply, fit inside the workflow that already exists (GitHub
             PRs), and cost under an hour a week in overhead.
           </p>
@@ -92,7 +92,7 @@ export default function QaProcess() {
               <p>
                 For any new screen or component: agree on the one job of the screen, which
                 existing patterns it reuses, and what (if anything) is genuinely new.
-                Anything new gets sketched against the rubric before code exists — the
+                Anything new gets sketched against the rubric before code exists, the
                 cheapest place to catch weak information architecture.
               </p>
             </div>
@@ -126,11 +126,11 @@ export default function QaProcess() {
       <div className="col prose">
         <Reveal>
           <p className="subhead" style={{ marginTop: 32 }}>
-            What &quot;good&quot; means — concretely enough that a non-designer can apply it
+            What &quot;good&quot; means, concretely enough that a non-designer can apply it
           </p>
           <p className="note">
-            Each check is derived directly from the rubric section. Try it — click to
-            run the checklist:
+            Each check is derived directly from the rubric section. Click to run the
+            checklist:
           </p>
           <GateChecklist />
         </Reveal>
@@ -155,7 +155,7 @@ export default function QaProcess() {
                 Readability or contrast failures, broken hierarchy, inconsistent spacing on
                 a <b>primary flow</b> (submit → approve → report), missing error/empty
                 states, or anything that makes a spending amount ambiguous. Fixed before
-                merge — in a fintech approval tool, clarity is the product.
+                merge; in a fintech approval tool, clarity is the product.
               </div>
             </div>
             <div className="rubric-row">
@@ -177,7 +177,7 @@ export default function QaProcess() {
               <div className="rubric-test">
                 Nice-to-haves: micro-interaction tuning, illustration consistency,
                 empty-state charm. Collected and shipped as a monthly polish PR so they
-                never crowd out feature work — and never silently accumulate.
+                never crowd out feature work, and never silently accumulate.
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function QaProcess() {
         <Reveal>
           <p className="subhead" style={{ marginTop: 24 }}>The issue template</p>
           <div className="codeblock">
-{`## Design QA — [screen name]
+{`## Design QA: [screen name]
 `}<span className="k">{`Rubric line failed:`}</span>{` e.g. "Spacing: token values only"
 `}<span className="k">{`Severity:`}</span>{` blocker | fix-this-week | polish
 `}<span className="k">{`Screenshot:`}</span>{` (drag in)
@@ -199,7 +199,7 @@ export default function QaProcess() {
           <p className="subhead" style={{ marginTop: 24 }}>What stops shipping vs. what doesn&apos;t</p>
           <p>
             The line is drawn by <b>flow, not aesthetics</b>: if a check fails on the money
-            path — submitting, approving, or reporting spend — it&apos;s a blocker, because
+            path (submitting, approving, or reporting spend), it&apos;s a blocker, because
             that&apos;s where trust lives. Everywhere else, design debt is allowed to exist
             for exactly one labelled week (or one polish cycle) before it&apos;s paid down.
             The process ships imperfect screens on purpose; it never ships unclear ones.

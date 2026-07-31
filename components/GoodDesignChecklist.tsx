@@ -6,7 +6,7 @@ export default function GoodDesignChecklist() {
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Rubric · The checklist</p>
-          <h2 className="section-title">What makes good design? — the general checklist</h2>
+          <h2 className="section-title">What makes good design? The general checklist</h2>
           <ul className="checklist">
             <li>
               <b>Good art direction and imagery</b>
@@ -16,7 +16,7 @@ export default function GoodDesignChecklist() {
             </li>
             <li>
               <b>Good use of typography</b>
-              <span className="sub">Clear type scale — defined sizes for display, heading, body, caption, etc.</span>
+              <span className="sub">Clear type scale: defined sizes for display, heading, body, caption, etc.</span>
             </li>
             <li><b>Padding and whitespace used effectively</b></li>
             <li><b>Noise and blur</b> to accentuate or bring attention to text and/or graphic elements</li>

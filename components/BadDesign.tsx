@@ -75,7 +75,7 @@ export default function BadDesign() {
       <div className="col prose">
         <Reveal>
           <p className="eyebrow">Rubric · Anti-patterns</p>
-          <h2 className="section-title">Good vs. bad — the same card, three ways</h2>
+          <h2 className="section-title">Good vs. bad: the same card, three ways</h2>
           <p>
             The clearest way to see the difference is one component under critique. Below:
             the original Vercel project card, the tightened redesign, and what happens when
@@ -134,20 +134,20 @@ export default function BadDesign() {
         <Reveal>
           <h2 className="section-title">What makes bad design?</h2>
           <ul className="checklist">
-            <li><b>No visual hierarchy</b> — everything competes for attention.</li>
-            <li><b>Too many nested containers</b> — cards within cards without purpose.</li>
-            <li><b>Overuse of color</b> — gradients, accents, and hues everywhere.</li>
-            <li><b>Overuse of visual effects</b> — glassmorphism, shadows, borders, and blur without intent.</li>
-            <li><b>Decorative instead of functional icons</b> — emoji and colored icon boxes that add no meaning.</li>
-            <li><b>Poor use of typography</b> — serif fonts used because they&apos;re fashionable, not appropriate.</li>
-            <li><b>Excessive animations</b> — motion without improving usability.</li>
-            <li><b>Poor contrast and readability</b> — effects reduce legibility.</li>
-            <li><b>Redundant visual detail</b> — every element tries to be special.</li>
-            <li><b>Inconsistent spacing and balance</b> — proportions feel subtly &quot;off.&quot;</li>
-            <li><b>Weak information architecture</b> — interface structure doesn&apos;t reflect user priorities.</li>
-            <li><b>Template-driven aesthetics</b> — generic patterns with no product identity.</li>
-            <li><b>Styling over communication</b> — optimizing for visual flair instead of clarity.</li>
-            <li><b>Lack of design intention</b> — choices feel generated rather than considered.</li>
+            <li><b>No visual hierarchy</b>: everything competes for attention.</li>
+            <li><b>Too many nested containers</b>: cards within cards without purpose.</li>
+            <li><b>Overuse of color</b>: gradients, accents, and hues everywhere.</li>
+            <li><b>Overuse of visual effects</b>: glassmorphism, shadows, borders, and blur without intent.</li>
+            <li><b>Decorative instead of functional icons</b>: emoji and colored icon boxes that add no meaning.</li>
+            <li><b>Poor use of typography</b>: serif fonts used because they&apos;re fashionable, not appropriate.</li>
+            <li><b>Excessive animations</b>: motion without improving usability.</li>
+            <li><b>Poor contrast and readability</b>: effects reduce legibility.</li>
+            <li><b>Redundant visual detail</b>: every element tries to be special.</li>
+            <li><b>Inconsistent spacing and balance</b>: proportions feel subtly &quot;off.&quot;</li>
+            <li><b>Weak information architecture</b>: interface structure doesn&apos;t reflect user priorities.</li>
+            <li><b>Template-driven aesthetics</b>: generic patterns with no product identity.</li>
+            <li><b>Styling over communication</b>: optimizing for visual flair instead of clarity.</li>
+            <li><b>Lack of design intention</b>: choices feel generated rather than considered.</li>
           </ul>
         </Reveal>
       </div>
