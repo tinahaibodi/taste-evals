@@ -120,6 +120,17 @@ export default function MeridianBrief() {
               used by Ramp, Mercury, and Stripe components. Adapt those patterns to
               Meridian&apos;s design system rather than creating novel workflows.
             </p>
+            <figure className="point-figure" style={{ marginTop: 18 }}>
+              <img
+                src="https://picsum.photos/seed/meridian-design-approach/1200/675"
+                alt="Established fintech design patterns"
+                loading="lazy"
+              />
+              <figcaption className="point-caption">
+                Adapt canonical patterns from Ramp, Mercury, and Stripe to Meridian&apos;s
+                design system.
+              </figcaption>
+            </figure>
             <p>
               <em>Treat these as deterministic interaction problems.</em>
             </p>

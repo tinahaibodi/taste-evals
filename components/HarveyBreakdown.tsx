@@ -2,12 +2,19 @@ import Reveal from "./Reveal";
 import EvalRunner from "./EvalRunner";
 import { SCORES, TOTAL, MAX } from "./benchmarks";
 
-const POINTS: { id: string; title: string; caption: string; body: string }[] = [
+const POINTS: {
+  id: string;
+  title: string;
+  caption: string;
+  body: string;
+  image?: string;
+}[] = [
   {
     id: "art-direction",
     title: "Good art direction and imagery",
     caption:
-      "Harvey's hero treatments: commissioned 3D renders and abstract textures in a dark, editorial frame.",
+      "New media with color grading that matches the branding: academic, muted, and left aligned on a clear grid.",
+    image: "/harvey/art-direction.png",
     body:
       "Their use of new media and art direction. They commissioned 3D renders and abstract textures rather than stock photography that help enhance the visualization of the legal market and their customer base (legal firms and internal GCs). They use dark, editorial hero treatments that emulate the courthouse, legal documents and the restrained visual language that is present in the branding of legal firms, legal documents and court rooms.",
   },
@@ -15,63 +22,79 @@ const POINTS: { id: string; title: string; caption: string; body: string }[] = [
     id: "typography",
     title: "Good use of typography",
     caption:
-      "The type scale in practice: display, heading, body and caption sizes, each with one job.",
+      "Limited serif use to mirror legal docs, with a font family change reserved for numerical values.",
+    image: "/harvey/typography.png",
     body:
       "Clear type scale with defined sizes for display, heading, body, caption. They use a sans serif that has generous line spacing and document style formatting. They restrain their typeface count and only use two families so the weight variation looks more precise.",
   },
   {
     id: "whitespace",
     title: "Padding and whitespace used effectively",
-    caption: "Token based spacing holding a dense, document heavy layout together.",
+    caption:
+      "Clear padding above the hero header and between the CTA, descriptive text, and media.",
+    image: "/harvey/whitespace.png",
     body:
       "Token based and even spacing that visualizes document heavy legal work, while also being consistent so there is no clutter.",
   },
   {
     id: "noise-blur",
     title: "Noise and blur to accentuate",
-    caption: "Grain and blur on a dark section pushing focus to the headline.",
+    caption:
+      "Subtle noise and fade on a dark section, enhancing muted compliance icons.",
+    image: "/harvey/noise-blur.png",
     body:
       "Subtle grain/texture and use of blur used on dark sections to help accentuate the headlines.",
   },
   {
     id: "grid",
     title: "Grid use for text placement and image containers",
-    caption: "The same column grid and image aspect ratios repeating across pages.",
+    caption:
+      "A clear two column layout on a held grid, with limited serif use for numerical values.",
+    image: "/harvey/grid.png",
     body:
       "Columns held consistently across pages and image containers share aspect ratios so marketing pages and case studies align as siblings.",
   },
   {
     id: "hierarchy",
     title: "Text hierarchy used effectively",
-    caption: "Weight doing the work: semibold headings, medium labels, regular body.",
+    caption:
+      "Navigation with clear header, subheader, and descriptive text weight roles.",
+    image: "/harvey/hierarchy.png",
     body:
       "Font weight, styling and variation all match: semibold = heading, medium = label, regular = body. All caps eyebrow labels consistently mark section starts and use of no arbitrary bolding makes the text more clean.",
   },
   {
     id: "copy",
     title: "Use of copy",
-    caption: "Comfortable line lengths and headlines that never run full bleed.",
+    caption:
+      "Two word composition, left aligned, with fade used for focus and accentuation.",
+    image: "/harvey/copy.png",
     body:
       "A 60 to 75 character measure on body and headlines that never run full bleed. Tightened tracking at display sizes, slight positive tracking on all caps labels. Copy tone fits the containers that are displayed and aren\u2019t misaligned.",
   },
   {
     id: "colour",
     title: "Limited colour with clear roles",
-    caption: "A near monochrome base with one accent that always means action.",
+    caption:
+      "A restrained muted palette: primary buttons white on black, secondary as outline, text and badges all white.",
+    image: "/harvey/colour.png",
     body:
       "Primary, neutrals, semantic: near monochrome neutral base with a single accent, so accent reliably means action/emphasis. Colour is never decorative. Alongside this, muted palettes (navy, charcoal, white, slate) with minimal decoration, with limited gradients or playful illustrations to emulate the legal industry that it\u2019s embodying.",
   },
   {
     id: "interaction",
     title: "Interaction states",
-    caption: "Hover tint and overlay treatments on buttons and links.",
+    caption: "Hover on the primary CTA: light, clear feedback without extra chrome.",
+    image: "/harvey/interaction.gif",
     body:
       "Hover, focus, active, disabled treatments on buttons, links and inputs are light but effective. They use a hover tint and overlay hover (a semi transparent layer that is applied on hover using opacity).",
   },
   {
     id: "motion",
     title: "Motion quality",
-    caption: "Blur and fade accentuating the use case carousel.",
+    caption:
+      "Clear media player with no autoplay, muted color grading, and video context that fits the brand.",
+    image: "/harvey/motion.png",
     body:
       "Animation is reserved for the use case carousel and the customer carousel, where blur and fade accentuate the full range of use cases Harvey could be applied to. New media videos autoload and autoplay with minimal performance cost.",
   },
@@ -92,7 +115,9 @@ const POINTS: { id: string; title: string; caption: string; body: string }[] = [
   {
     id: "consistency",
     title: "Marketing to product consistency",
-    caption: "The same type, spacing and colour logic carried into the product itself.",
+    caption:
+      "Same color palette and branding system carried from marketing into product UI.",
+    image: "/harvey/consistency.png",
     body:
       "The brand\u2019s type, spacing, and colour logic carry into the visualisation of the app itself. In the screen recording, you can see the same styling treatment applied across cards, buttons, and other components.",
   },
@@ -113,18 +138,18 @@ export default function HarveyBreakdown() {
           <h2 className="section-title">What Makes Great Design? Lessons from Harvey</h2>
         </Reveal>
 
-        {POINTS.map(({ id, title, caption, body }) => (
+        {POINTS.map(({ id, title, caption, body, image }) => (
           <Reveal key={id}>
             <div className="point">
               <h3 className="point-title">{title}</h3>
-              <figure className="point-figure">
-                <img
-                  src={`https://picsum.photos/seed/harvey-${id}/1200/675`}
-                  alt={title}
-                  loading="lazy"
-                />
-                <figcaption className="point-caption">{caption}</figcaption>
-              </figure>
+              {image && (
+                <figure
+                  className={`point-figure${image.startsWith("/harvey/") ? " annotated" : ""}`}
+                >
+                  <img src={image} alt={title} loading="lazy" />
+                  <figcaption className="point-caption">{caption}</figcaption>
+                </figure>
+              )}
               <p>{body}</p>
             </div>
           </Reveal>

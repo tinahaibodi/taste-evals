@@ -6,13 +6,18 @@ import Toc from "./Toc";
 import SiteFooter from "./SiteFooter";
 import { SECTIONS } from "./sections";
 
+function viewFromHash(): string {
+  if (typeof window === "undefined") return "hero";
+  const hash = window.location.hash.slice(1);
+  return SECTIONS.some((s) => s.id === hash) ? hash : "hero";
+}
+
 export default function Site() {
   const [view, setView] = useState<string>("hero");
 
   useEffect(() => {
     const apply = () => {
-      const hash = window.location.hash.slice(1);
-      setView(SECTIONS.some((s) => s.id === hash) ? hash : "hero");
+      setView(viewFromHash());
       window.scrollTo(0, 0);
     };
     apply();
@@ -20,14 +25,16 @@ export default function Site() {
     return () => window.removeEventListener("hashchange", apply);
   }, []);
 
+  const enter = (id: string) => {
+    setView(id);
+    if (window.location.hash.slice(1) !== id) {
+      window.location.hash = id;
+    }
+    window.scrollTo(0, 0);
+  };
+
   if (view === "hero") {
-    return (
-      <Hero
-        onEnter={() => {
-          window.location.hash = "part-1-1";
-        }}
-      />
-    );
+    return <Hero onEnter={() => enter("part-1-1")} />;
   }
 
   const section = SECTIONS.find((s) => s.id === view)!;

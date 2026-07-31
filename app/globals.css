@@ -189,6 +189,9 @@ main { display: flex; flex-direction: column; min-height: 100svh; }
   border-radius: 12px; border: 1px solid var(--panel-border);
   background: var(--panel);
 }
+.point-figure.annotated img {
+  aspect-ratio: auto; object-fit: contain; background: #f3f3f3;
+}
 .point-caption { color: var(--faint); font-size: 13.5px; line-height: 1.6; margin-top: 10px; }
 .point-placeholder {
   aspect-ratio: 16 / 9; border-radius: 12px;
