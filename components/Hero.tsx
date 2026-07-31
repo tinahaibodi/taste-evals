@@ -9,9 +9,14 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
   return (
     <header className="hero">
       <img src="/taste.svg" alt="Taste" className="hero-mark" />
-      <button className="hero-enter" onClick={onEnter}>
-        Start the Taste Check →
-      </button>
+      <a
+        className="hero-github"
+        href="https://github.com/tinahaibodi/taste-evals"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
 
       <div className="hero-center">
         <h1 className="hero-title">
@@ -19,6 +24,9 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
           <span className="hero-labs">Labs</span>
         </h1>
         <p className="hero-sub">A taste audit your team can actually run.</p>
+        <button className="hero-enter" onClick={onEnter}>
+          Start the Taste Check →
+        </button>
       </div>
 
       <div className="hero-deck">

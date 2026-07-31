@@ -43,11 +43,20 @@ section { padding: 72px 0; }
   position: relative; overflow: hidden;
 }
 .hero-mark { position: absolute; top: 30px; left: 34px; width: 76px; height: auto; }
-.hero-enter {
+.hero-github {
   position: absolute; top: 24px; right: 32px;
   font-family: inherit; font-size: 13px; font-weight: 500;
   color: var(--text);
   text-decoration: none; border: 1px solid var(--panel-border); border-radius: 999px;
+  padding: 9px 18px; transition: border-color .2s, background .2s;
+  background: transparent; cursor: pointer;
+}
+.hero-github:hover { border-color: var(--muted); background: var(--panel); }
+.hero-enter {
+  margin-top: 26px;
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  color: var(--text);
+  border: 1px solid var(--panel-border); border-radius: 999px;
   padding: 9px 18px; transition: border-color .2s, background .2s;
   background: transparent; cursor: pointer;
 }
@@ -75,10 +84,11 @@ section { padding: 72px 0; }
 }
 .hero-title { animation: fade-blur-in .8s ease .05s both; }
 .hero-sub { animation: fade-blur-in .8s ease .25s both; }
+.hero-enter { animation: fade-blur-in .8s ease .4s both; }
 .hero-deck { animation: fade-blur-in .9s ease .45s both; }
-.hero-mark, .hero-enter { animation: fade-blur-in .8s ease .65s both; }
+.hero-mark, .hero-github { animation: fade-blur-in .8s ease .65s both; }
 @media (prefers-reduced-motion: reduce) {
-  .hero-title, .hero-sub, .hero-deck, .hero-mark, .hero-enter { animation: none; }
+  .hero-title, .hero-sub, .hero-deck, .hero-mark, .hero-enter, .hero-github { animation: none; }
 }
 
 /* fanned section deck */
