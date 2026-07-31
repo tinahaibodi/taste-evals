@@ -133,63 +133,164 @@ export default function BadDesign() {
       <div className="col prose" style={{ marginTop: 24 }}>
         <Reveal>
           <h2 className="section-title">What makes good design?</h2>
-          <ul className="checklist">
-            <li>
-              <b>Good art direction and imagery</b>
-              <span className="sub">
-                i.e. use of new media for Harvey + Sierra, use of print-shop imagery for Kimi
-              </span>
-            </li>
-            <li>
-              <b>Good use of typography</b>
-              <span className="sub">Clear type scale: defined sizes for display, heading, body, caption, etc.</span>
-            </li>
-            <li><b>Padding and whitespace used effectively</b></li>
-            <li><b>Noise and blur</b> to accentuate or bring attention to text and/or graphic elements</li>
-            <li><b>Grid use</b> of text placement and image containers</li>
-            <li>
-              <b>Text hierarchy used effectively</b>
-              <span className="sub">Font weight, styling and variation match</span>
-            </li>
-            <li>
-              <b>Use of copy</b>
-              <span className="sub">Good line length (characters and placement of text) and letter spacing</span>
-            </li>
-            <li>
-              <b>Limited colour, defined palette with clear roles</b>
-              <span className="sub">Primary, neutrals, semantic, etc.</span>
-            </li>
-            <li><b>Icon style and consistency</b></li>
-            <li><b>Borders, dividers and strokes</b></li>
-            <li><b>Text properly aligned and centered</b></li>
-            <li><b>Photos and illustrations</b> sharing a consistent, cohesive style and art direction</li>
-            <li>
-              <b>Grid use of text, image containers and section layout</b>
-              <span className="sub">Basically knowing how to spread out the content well before the page</span>
-            </li>
-          </ul>
+          <h3 className="point-title">Art direction and imagery</h3>
+          <p>
+            Good design starts with deliberate art direction: imagery that is commissioned or
+            curated for the product rather than pulled from a stock library, the way Harvey and
+            Sierra lean on new media and Kimi leans on print-shop imagery. Photos and
+            illustrations share one consistent, cohesive style, so every visual feels like it
+            belongs to the same brand.
+          </p>
+          <h3 className="point-title">Typography and hierarchy</h3>
+          <p>
+            Typography is held to a clear type scale, with defined sizes for display, heading,
+            body and caption. Text hierarchy is carried by font weight, styling and variation
+            that match their role, and copy is set at a good line length with considered letter
+            spacing. Text is properly aligned and centered, so nothing reads as accidental.
+          </p>
+          <h3 className="point-title">Space and structure</h3>
+          <p>
+            Padding and whitespace are used effectively, and a grid governs text placement,
+            image containers and section layout. This is the unglamorous part of taste: knowing
+            how to spread the content out well before anything decorative is added to the page.
+          </p>
+          <h3 className="point-title">Colour and detail</h3>
+          <p>
+            Colour is limited to a defined palette with clear roles: primary, neutrals and
+            semantic. Icons share one style and stay consistent, borders, dividers and strokes
+            are deliberate, and effects like noise and blur exist only to accentuate, bringing
+            attention to text or graphic elements rather than decorating them.
+          </p>
         </Reveal>
       </div>
 
       <div className="col prose" style={{ marginTop: 24 }}>
         <Reveal>
           <h2 className="section-title">What makes bad design?</h2>
-          <ul className="checklist">
-            <li><b>No visual hierarchy</b>: everything competes for attention.</li>
-            <li><b>Too many nested containers</b>: cards within cards without purpose.</li>
-            <li><b>Overuse of color</b>: gradients, accents, and hues everywhere.</li>
-            <li><b>Overuse of visual effects</b>: glassmorphism, shadows, borders, and blur without intent.</li>
-            <li><b>Decorative instead of functional icons</b>: emoji and colored icon boxes that add no meaning.</li>
-            <li><b>Poor use of typography</b>: serif fonts used because they&apos;re fashionable, not appropriate.</li>
-            <li><b>Excessive animations</b>: motion without improving usability.</li>
-            <li><b>Poor contrast and readability</b>: effects reduce legibility.</li>
-            <li><b>Redundant visual detail</b>: every element tries to be special.</li>
-            <li><b>Inconsistent spacing and balance</b>: proportions feel subtly &quot;off.&quot;</li>
-            <li><b>Weak information architecture</b>: interface structure doesn&apos;t reflect user priorities.</li>
-            <li><b>Template-driven aesthetics</b>: generic patterns with no product identity.</li>
-            <li><b>Styling over communication</b>: optimizing for visual flair instead of clarity.</li>
-            <li><b>Lack of design intention</b>: choices feel generated rather than considered.</li>
-          </ul>
+          <h3 className="point-title">Hierarchy and structure collapse</h3>
+          <p>
+            Bad design usually announces itself structurally. There is no visual hierarchy, so
+            everything competes for attention. Containers nest inside containers without
+            purpose, spacing and balance drift until proportions feel subtly off, and the
+            information architecture stops reflecting what users actually prioritize.
+          </p>
+          <h3 className="point-title">Colour and effects everywhere</h3>
+          <p>
+            Colour gets overused: gradients, accents and hues everywhere, with no role behind
+            any of them. Visual effects pile up the same way, glassmorphism, shadows, borders
+            and blur applied without intent, until contrast and readability suffer and every
+            element is trying to be special at once.
+          </p>
+          <h3 className="point-title">Typography, icons and motion without a job</h3>
+          <p>
+            Typefaces get chosen because they are fashionable rather than appropriate. Icons
+            turn decorative, emoji and colored icon boxes that add no meaning. Animation piles
+            on without improving usability, so motion becomes another layer of noise instead of
+            a tool.
+          </p>
+          <h3 className="point-title">No intention behind the choices</h3>
+          <p>
+            Underneath all of it is a lack of design intention: template-driven aesthetics with
+            no product identity, styling optimized for visual flair instead of communication,
+            and choices that feel generated rather than considered.
+          </p>
+        </Reveal>
+      </div>
+
+      <div className="col prose" style={{ marginTop: 24 }}>
+        <Reveal>
+          <h2 className="section-title">The rubric</h2>
+          <p>Every point above, condensed into the table we actually review against.</p>
+          <div className="rubric compare">
+            <div className="rubric-row head">
+              <div>Criterion</div>
+              <div>Good looks like</div>
+              <div>Bad looks like</div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Art direction &amp; imagery</div>
+              <div className="rubric-test">
+                Commissioned or curated imagery; photos and illustrations share one cohesive
+                style.
+              </div>
+              <div className="rubric-test">
+                Template-driven aesthetics; generic patterns with no product identity.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Typography</div>
+              <div className="rubric-test">
+                Clear type scale (display, heading, body, caption); restrained typeface count.
+              </div>
+              <div className="rubric-test">
+                Fonts chosen because they&apos;re fashionable, not appropriate.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Hierarchy</div>
+              <div className="rubric-test">
+                Weight, styling and variation match their role; no arbitrary bolding.
+              </div>
+              <div className="rubric-test">
+                No visual hierarchy; everything competes for attention.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Spacing &amp; layout</div>
+              <div className="rubric-test">
+                Effective padding and whitespace; a grid governs text, images and sections.
+              </div>
+              <div className="rubric-test">
+                Nested containers without purpose; proportions feel subtly off.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Colour</div>
+              <div className="rubric-test">
+                Limited palette with clear roles: primary, neutrals, semantic.
+              </div>
+              <div className="rubric-test">
+                Gradients, accents and hues everywhere; colour as decoration.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Effects &amp; motion</div>
+              <div className="rubric-test">
+                Noise and blur used to accentuate text or graphic elements.
+              </div>
+              <div className="rubric-test">
+                Glassmorphism, shadows and blur without intent; motion that doesn&apos;t improve
+                usability.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Copy</div>
+              <div className="rubric-test">
+                Good line length and letter spacing; text properly aligned and centered.
+              </div>
+              <div className="rubric-test">
+                Styling over communication; flair instead of clarity.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Icons &amp; detail</div>
+              <div className="rubric-test">
+                One icon style; deliberate borders, dividers and strokes.
+              </div>
+              <div className="rubric-test">
+                Decorative emoji and icon boxes that add no meaning; redundant visual detail.
+              </div>
+            </div>
+            <div className="rubric-row">
+              <div className="rubric-name">Intention</div>
+              <div className="rubric-test">
+                Every choice looks considered and traceable to the product.
+              </div>
+              <div className="rubric-test">
+                Choices feel generated; the interface has no point of view.
+              </div>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
