@@ -1,60 +1,62 @@
 import Reveal from "./Reveal";
 
-const SCREENS: { id: string; title: string; body: string; caption: string }[] = [
+const SCREENS: {
+  id: string;
+  title: string;
+  body: string;
+  caption?: string;
+  image?: string;
+}[] = [
   {
     id: "submission",
     title: "Expense submission",
     body:
       "New expense form: amount, currency, date, category, merchant, cost center/project, memo, receipt upload. Must handle draft state, validation errors, and duplicate receipt warning.",
-    caption: "The new expense form, with receipt upload and inline validation.",
+    caption: "Reference: a dense spend migration table with clear next actions.",
+    image: "/meridian/submission.png",
   },
   {
     id: "my-expenses",
     title: "My expenses",
     body:
       "Filterable list of the user's own expenses with status. Each row opens the detail view.",
-    caption: "The employee's own expenses, filterable by status.",
   },
   {
     id: "approval-queue",
     title: "Approval queue",
     body:
       "Pending items for the logged in approver, sorted by age. Actions: approve, reject, request more info. Bulk approve for items under a policy threshold. Shows policy flags inline.",
-    caption: "The approver inbox, oldest first, with policy flags inline.",
   },
   {
     id: "detail",
     title: "Expense detail",
     body:
       "Receipt preview alongside expense data, full audit trail, comment thread, status history. This is the screen auditors will look at, completeness over cleverness.",
-    caption: "Receipt beside the data, with the full audit trail below.",
+    caption: "Reference: cardholder and card assignment with suggested create actions.",
+    image: "/meridian/detail.png",
   },
   {
     id: "dashboard",
     title: "Dashboard",
     body:
       "Spend by category, team, and cost center; budget vs. actual; pending approval count and aging; month over month trend. Default view for finance and admin roles.",
-    caption: "The finance overview: spend, budget vs. actual, and approval aging.",
   },
   {
     id: "transactions",
     title: "Transactions table",
     body:
       "All company expenses: searchable, filterable, sortable, CSV export. Must handle long merchant names, large amounts, and thousands of rows gracefully.",
-    caption: "Every company expense in one searchable, exportable table.",
   },
   {
     id: "policy",
     title: "Policy and approval rules",
     body:
       "Configure approval chains, spend thresholds per category, required fields, receipt requirements.",
-    caption: "Admin configuration for approval chains and policy thresholds.",
   },
   {
     id: "settings",
     title: "Settings and billing",
     body: "Company profile, accounting export settings, plan and usage summary.",
-    caption: "Company settings, accounting export, and plan usage.",
   },
 ];
 
@@ -83,6 +85,9 @@ export default function MeridianBrief() {
     <section id="brief">
       <div className="col prose">
         <Reveal>
+          <figure className="point-figure" style={{ marginTop: 0, marginBottom: 28 }}>
+            <img src="/meridian-cover.png" alt="Taste Labs cover" loading="eager" />
+          </figure>
           <h2 className="section-title">Meridian: Expense Tracking App</h2>
         </Reveal>
 
@@ -120,17 +125,6 @@ export default function MeridianBrief() {
               used by Ramp, Mercury, and Stripe components. Adapt those patterns to
               Meridian&apos;s design system rather than creating novel workflows.
             </p>
-            <figure className="point-figure" style={{ marginTop: 18 }}>
-              <img
-                src="https://picsum.photos/seed/meridian-design-approach/1200/675"
-                alt="Established fintech design patterns"
-                loading="lazy"
-              />
-              <figcaption className="point-caption">
-                Adapt canonical patterns from Ramp, Mercury, and Stripe to Meridian&apos;s
-                design system.
-              </figcaption>
-            </figure>
             <p>
               <em>Treat these as deterministic interaction problems.</em>
             </p>
@@ -143,19 +137,19 @@ export default function MeridianBrief() {
           </h2>
         </Reveal>
 
-        {SCREENS.map(({ id, title, body, caption }) => (
+        {SCREENS.map(({ id, title, body, caption, image }) => (
           <Reveal key={id}>
             <div className="point">
               <h3 className="subhead">{title}</h3>
               <p>{body}</p>
-              <figure className="point-figure" style={{ marginTop: 18 }}>
-                <img
-                  src={`https://picsum.photos/seed/meridian-${id}/1200/675`}
-                  alt={title}
-                  loading="lazy"
-                />
-                <figcaption className="point-caption">{caption}</figcaption>
-              </figure>
+              {image && (
+                <figure className="point-figure" style={{ marginTop: 18 }}>
+                  <img src={image} alt={title} loading="lazy" />
+                  {caption && (
+                    <figcaption className="point-caption">{caption}</figcaption>
+                  )}
+                </figure>
+              )}
             </div>
           </Reveal>
         ))}
