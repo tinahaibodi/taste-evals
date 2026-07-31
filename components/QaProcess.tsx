@@ -67,7 +67,7 @@ export default function QaProcess() {
     <section id="qa">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Your Workflow · The Process</p>
+          <p className="eyebrow">QA</p>
           <h2 className="section-title">Three gates, under an hour a week</h2>
           <p>
             The constraint that matters: <b>two developers, no designer on staff.</b> So the
@@ -78,7 +78,7 @@ export default function QaProcess() {
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 40 }}>What gets reviewed, and when</p>
+          <p className="subhead" style={{ marginTop: 40 }}>What gets reviewed, and when</p>
         </Reveal>
       </div>
 
@@ -125,18 +125,18 @@ export default function QaProcess() {
 
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 32 }}>
+          <p className="subhead" style={{ marginTop: 32 }}>
             What &quot;good&quot; means — concretely enough that a non-designer can apply it
           </p>
           <p className="note">
-            Each check is derived directly from the good/bad lists above. Try it — click to
+            Each check is derived directly from the rubric section. Try it — click to
             run the checklist:
           </p>
           <GateChecklist />
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 56 }}>How issues get logged and prioritized</p>
+          <p className="subhead" style={{ marginTop: 56 }}>How issues get logged and prioritized</p>
           <p>
             No new tooling. A fail becomes a normal GitHub issue with the label{" "}
             <b>design-qa</b>, a screenshot, the rubric line it fails, and one of three
@@ -184,7 +184,7 @@ export default function QaProcess() {
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 24 }}>The issue template</p>
+          <p className="subhead" style={{ marginTop: 24 }}>The issue template</p>
           <div className="codeblock">
 {`## Design QA — [screen name]
 `}<span className="k">{`Rubric line failed:`}</span>{` e.g. "Spacing: token values only"
@@ -196,7 +196,7 @@ export default function QaProcess() {
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 24 }}>What stops shipping vs. what doesn&apos;t</p>
+          <p className="subhead" style={{ marginTop: 24 }}>What stops shipping vs. what doesn&apos;t</p>
           <p>
             The line is drawn by <b>flow, not aesthetics</b>: if a check fails on the money
             path — submitting, approving, or reporting spend — it&apos;s a blocker, because

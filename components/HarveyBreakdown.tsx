@@ -5,7 +5,7 @@ export default function HarveyBreakdown() {
     <section id="part-1-1">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Reference · 02</p>
+          <p className="eyebrow">Rubric · Case study</p>
           <h2 className="section-title">What makes good design? — Harvey</h2>
           <ul className="checklist">
             <li>

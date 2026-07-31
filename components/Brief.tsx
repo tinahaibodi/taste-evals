@@ -5,18 +5,18 @@ export default function Brief() {
     <section id="brief">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Start Here · Project Brief</p>
+          <p className="eyebrow">Brief</p>
           <h2 className="section-title">What this is, and how to use it</h2>
           <p>
-            This is the design QA kit for <b>Meridian</b> — a B2B fintech app for tracking
+            This is the Taste Check for <b>Meridian</b> — a B2B fintech app for tracking
             and approving company spending, built by two developers with no designer on
             staff. It assumes zero design vocabulary: every rule is a check you can run or
             a question you can answer.
           </p>
           <p className="note">
-            If you&apos;re one of the two devs: the workflow sections next are the part you
-            use day to day. The reference sections at the end explain why the rules are
-            what they are — read once, then forget about them.
+            Four parts: this brief, the design rubric the rules come from, the QA process
+            you run week to week, and the handoff — the Taste CLI that keeps running the
+            rubric after we leave.
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -30,7 +30,7 @@ export default function Brief() {
         <Reveal delay={0.15}>
           <p className="eyebrow" style={{ marginTop: 24 }}>Nice to have</p>
           <ul className="checklist quiet">
-            <li>A Dan Hollick–style web app that can display the full task <span className="hand" style={{ fontSize: 22 }}>&nbsp;← you are here</span></li>
+            <li>A Dan Hollick–style web app that can display the full task <span className="hand">&nbsp;← you are here</span></li>
             <li>
               Design brief for design evals for the QA process
               <span className="sub">Meridian — B2B fintech startup app to track and approve company spending</span>

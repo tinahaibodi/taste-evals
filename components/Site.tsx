@@ -1,41 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Hero from "./Hero";
 import Toc from "./Toc";
-import Brief from "./Brief";
-import LlmGoodDesign from "./LlmGoodDesign";
-import HarveyBreakdown from "./HarveyBreakdown";
-import GoodDesignChecklist from "./GoodDesignChecklist";
-import BadDesign from "./BadDesign";
-import ToolWalkthrough from "./ToolWalkthrough";
-import QaProcess from "./QaProcess";
 import SiteFooter from "./SiteFooter";
+import { SECTIONS } from "./sections";
 
 export default function Site() {
-  const [entered, setEntered] = useState(false);
+  const [view, setView] = useState<string>("hero");
 
-  const enter = () => {
-    setEntered(true);
-    window.scrollTo(0, 0);
-  };
+  useEffect(() => {
+    const apply = () => {
+      const hash = window.location.hash.slice(1);
+      if (SECTIONS.some((s) => s.id === hash)) {
+        setView(hash);
+        window.scrollTo(0, 0);
+      }
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
+  }, []);
 
-  if (!entered) {
-    return <Hero onEnter={enter} />;
+  if (view === "hero") {
+    return (
+      <Hero
+        onEnter={() => {
+          window.location.hash = "brief";
+        }}
+      />
+    );
   }
+
+  const section = SECTIONS.find((s) => s.id === view)!;
 
   return (
     <>
-      <Toc />
-      <div className="article">
-        <Brief />
-        <ToolWalkthrough />
-        <QaProcess />
-        <LlmGoodDesign />
-        <HarveyBreakdown />
-        <GoodDesignChecklist />
-        <BadDesign />
-      </div>
+      <Toc active={view} />
+      <div className="article">{section.element}</div>
       <SiteFooter />
     </>
   );

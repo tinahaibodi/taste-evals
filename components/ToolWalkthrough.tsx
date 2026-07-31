@@ -19,17 +19,18 @@ export default function ToolWalkthrough() {
     <section id="tool">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Your Workflow · At PR Time</p>
-          <h2 className="section-title">The rubric, as a tool you run</h2>
+          <p className="eyebrow">Handoff</p>
+          <h2 className="section-title">The rubric, as a tool you keep</h2>
           <p>
-            A rubric in a doc gets read once. So it ships as <b>taste-check</b> — a CLI
-            that runs the checkable half of the rubric for you, and hands the judgment
-            calls to a checklist. This is what you do before opening a PR.
+            A rubric in a doc gets read once. So the handoff is the <b>Taste CLI</b> — it
+            runs the checkable half of the rubric for you, and hands the judgment calls to
+            the checklist. This is what a Meridian developer does before opening a PR,
+            long after we&apos;re gone.
           </p>
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 40 }}>Step 1 · Run the static check</p>
+          <p className="subhead" style={{ marginTop: 40 }}>Step 1 · Run the static check</p>
           <p className="note">
             Deterministic lint of the CSS and JSX you touched — spacing tokens, type scale,
             font count, emoji-as-icon, copy length, color roles. No API keys, runs in CI.
@@ -56,7 +57,7 @@ export default function ToolWalkthrough() {
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 40 }}>Step 2 · Run the vision check</p>
+          <p className="subhead" style={{ marginTop: 40 }}>Step 2 · Run the vision check</p>
           <p className="note">
             A screenshot of the branch preview goes to a vision model, which grades the
             judgment-call lines — hierarchy, contrast, nesting, states — and reports in the
@@ -76,11 +77,11 @@ export default function ToolWalkthrough() {
         </Reveal>
 
         <Reveal>
-          <p className="eyebrow" style={{ marginTop: 40 }}>Step 3 · Run the human pass</p>
+          <p className="subhead" style={{ marginTop: 40 }}>Step 3 · Run the human pass</p>
           <p className="note">
             What&apos;s left is taste the machines can&apos;t settle: does the hierarchy
             read right, does motion earn its place. That&apos;s the 12-point checklist in
-            the QA process below — ten minutes, done by the dev who didn&apos;t write the
+            the QA process section — ten minutes, done by the dev who didn&apos;t write the
             code.
           </p>
         </Reveal>

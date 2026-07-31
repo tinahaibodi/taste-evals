@@ -14,9 +14,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Taste Labs — Field Notes",
+  title: "Taste Check · Meridian — Taste Labs",
   description:
-    "Design evals planning doc: what makes good design, what makes bad design, and a QA process a two-developer team can actually run.",
+    "Taste Check: what makes good design, what makes bad design, and a QA process a two-developer team can actually run.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

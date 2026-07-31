@@ -74,7 +74,7 @@ export default function BadDesign() {
     <section id="part-2">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Reference · 04</p>
+          <p className="eyebrow">Rubric · Anti-patterns</p>
           <h2 className="section-title">Good vs. bad — the same card, three ways</h2>
           <p>
             The clearest way to see the difference is one component under critique. Below:
