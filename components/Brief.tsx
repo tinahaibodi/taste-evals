@@ -5,14 +5,18 @@ export default function Brief() {
     <section id="brief">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Project Brief</p>
-          <h2 className="section-title">What this doc covers</h2>
+          <p className="eyebrow">Start Here · Project Brief</p>
+          <h2 className="section-title">What this is, and how to use it</h2>
           <p>
-            This is the Taste Labs planning doc, turned into field notes. It walks through
-            what LLMs think good design is, what actually makes good design, what makes bad
-            design — and then solves the QA process for{" "}
-            <b>Meridian</b>, a B2B fintech startup app to track and approve company spending,
-            in a way a two-developer team can actually run.
+            This is the design QA kit for <b>Meridian</b> — a B2B fintech app for tracking
+            and approving company spending, built by two developers with no designer on
+            staff. It assumes zero design vocabulary: every rule is a check you can run or
+            a question you can answer.
+          </p>
+          <p className="note">
+            If you&apos;re one of the two devs: the workflow sections next are the part you
+            use day to day. The reference sections at the end explain why the rules are
+            what they are — read once, then forget about them.
           </p>
         </Reveal>
         <Reveal delay={0.1}>

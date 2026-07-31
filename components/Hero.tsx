@@ -5,9 +5,9 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
         <img src="/taste.svg" alt="Taste" className="hero-logo" />
         <span className="hero-labs">Labs</span>
       </h1>
-      <p className="hero-sub">Field Notes · Design Evals &amp; QA · Planning Doc</p>
+      <p className="hero-sub">Design QA for a two-developer team · Meridian</p>
       <button className="hero-enter" onClick={onEnter}>
-        Read the field notes →
+        Open the QA kit →
       </button>
     </header>
   );

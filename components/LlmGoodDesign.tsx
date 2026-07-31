@@ -5,7 +5,7 @@ export default function LlmGoodDesign() {
     <section id="part-1">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Part 1</p>
+          <p className="eyebrow">Reference · 01 · Where the rules come from</p>
           <h2 className="section-title">What LLMs think is good design</h2>
           <p>
             Good design examples: <b>Harvey</b> and <b>Sierra</b> — a useful pair because

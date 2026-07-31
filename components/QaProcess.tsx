@@ -67,8 +67,8 @@ export default function QaProcess() {
     <section id="qa">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Part 3 · QA Process · ~90 min</p>
-          <h2 className="section-title">A QA process Meridian can run after we leave</h2>
+          <p className="eyebrow">Your Workflow · The Process</p>
+          <h2 className="section-title">Three gates, under an hour a week</h2>
           <p>
             The constraint that matters: <b>two developers, no designer on staff.</b> So the
             process can&apos;t depend on taste — it has to turn &quot;good&quot; into checks
@@ -101,9 +101,11 @@ export default function QaProcess() {
               <h3>PR visual QA</h3>
               <p className="g-when">At pull-request time · 10 min · the dev who didn&apos;t write it</p>
               <p>
-                The reviewer opens the branch preview and runs the 12-point checklist below
-                against the changed screens. A screenshot goes in the PR. Fails are filed
-                with a severity label; blockers stop the merge.
+                CI has already run <b>taste-check static</b>; the vision check has
+                commented on the preview. The reviewer opens the branch preview and runs
+                the 12-point checklist below against the changed screens. A screenshot
+                goes in the PR. Fails are filed with a severity label; blockers stop the
+                merge.
               </p>
             </div>
             <div className="gate">

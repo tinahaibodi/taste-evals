@@ -5,7 +5,7 @@ export default function GoodDesignChecklist() {
     <section id="part-1-2">
       <div className="col prose">
         <Reveal>
-          <p className="eyebrow">Part 1.2</p>
+          <p className="eyebrow">Reference · 03</p>
           <h2 className="section-title">What makes good design? — the general checklist</h2>
           <ul className="checklist">
             <li>

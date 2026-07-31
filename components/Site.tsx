@@ -8,6 +8,7 @@ import LlmGoodDesign from "./LlmGoodDesign";
 import HarveyBreakdown from "./HarveyBreakdown";
 import GoodDesignChecklist from "./GoodDesignChecklist";
 import BadDesign from "./BadDesign";
+import ToolWalkthrough from "./ToolWalkthrough";
 import QaProcess from "./QaProcess";
 import SiteFooter from "./SiteFooter";
 
@@ -28,11 +29,12 @@ export default function Site() {
       <Toc />
       <div className="article">
         <Brief />
+        <ToolWalkthrough />
+        <QaProcess />
         <LlmGoodDesign />
         <HarveyBreakdown />
         <GoodDesignChecklist />
         <BadDesign />
-        <QaProcess />
       </div>
       <SiteFooter />
     </>

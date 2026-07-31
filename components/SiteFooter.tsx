@@ -9,12 +9,13 @@ export default function SiteFooter() {
         <div className="footer-cols">
           <div>
             <p className="f-head">Contents</p>
-            <a href="#brief">Brief</a>
-            <a href="#part-1">LLM Taste</a>
+            <a href="#brief">The Brief</a>
+            <a href="#tool">Run taste-check</a>
+            <a href="#qa">Gates &amp; Checklist</a>
+            <a href="#part-1">What LLMs Think</a>
             <a href="#part-1-1">Harvey Breakdown</a>
-            <a href="#part-1-2">The Checklist</a>
+            <a href="#part-1-2">Good Design Checklist</a>
             <a href="#part-2">Good vs. Bad</a>
-            <a href="#qa">QA Process</a>
           </div>
           <div>
             <p className="f-head">Elsewhere</p>
