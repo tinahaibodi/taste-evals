@@ -94,8 +94,11 @@ export default function MeridianBrief() {
               user groups.
             </p>
             <p>
-              <b>Employees</b> submit, manage, and track expenses. <b>Finance and
-              approvers</b> review, approve, audit, and monitor company spend.
+              <b>Employees</b> submit, manage, and track expenses.
+            </p>
+            <p>
+              <b>Management</b> i.e. approvers review, approve, audit, and monitor
+              company spend.
             </p>
             <p>
               <b>Deliverable:</b> One responsive web application, optimized for desktop.
